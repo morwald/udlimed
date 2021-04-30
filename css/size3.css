@@ -1,0 +1,57 @@
+/*Size3 (Screen => 1200px)*/
+@media (min-width: 1200px) {
+	/*Main Content Style*/
+	header, nav {
+		height: 180px;
+	}
+.logo {
+		font-size: 42px;
+	}
+	main div h2 {
+		font-size: 45px;
+	}
+	main div h3 {
+		font-size: 30px;
+	}
+	main div p {
+		font-size: 25px;
+	}
+	main div ul {
+		font-size: 25px;
+	}
+	main .section-b {
+		display: grid;
+	}
+	/*Aside*/
+	aside {
+		display:flex;
+		justify-content: space-around;
+		padding: 50px;
+	}
+	aside div {
+		padding: 20px 0px;
+	}
+	/*Navigation*/
+	nav a {
+		position: relative;
+		text-decoration: none;
+		color:#000000;
+		font-size: 40px;
+	}
+	nav a::after {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 2px;
+		top: 100%;
+		left: 0px;
+		background: #112132;
+		transition: transform 0.5s;
+		transform: scaleX(0);
+		transform-origin: right;
+	}
+	header a:hover::after {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+}
