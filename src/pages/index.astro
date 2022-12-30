@@ -13,6 +13,7 @@ const posts = await Astro.glob('../posts/*.md');
 		<div class="container">
        {posts.map((post) =>
           <Card>
+            <h3>{post.frontmatter.title}</h3>
             <post.Content />
           </Card>
         )}

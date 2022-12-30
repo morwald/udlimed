@@ -1,9 +1,8 @@
 ---
-title: Aufnahme neuer Patienten 
+title: Aktuelles
 ---
+Ab dem neuen Jahr ist die Praxis auch am Dienstagnachmittag geschlossen
 
-# Aufnahme neuer Patienten 
-
-Bitte beachten Sie, dass wir momentan nur neue Patienten aus Udligenswil
-aufnehmen können und bitten Sie, eine Neuanmeldung immer vorher mit uns
-abzuklären.
+**Unsere neuen Öffnungszeitens :**<br>
+Mo/Mi/Fr ganztags<br>
+Di/Do nur vormittags

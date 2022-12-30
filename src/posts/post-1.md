@@ -2,8 +2,6 @@
 title: Praxisöffnungszeiten Weihnachtsferien / Jahreswechsel
 ---
 
-# Praxisöffnungszeiten Weihnachtsferien / Jahreswechsel
-
 **Öffnungszeiten 27. – 30.12.2022**<br>
 Di/Fr ganztags<br>
 Do vormittags<br>
