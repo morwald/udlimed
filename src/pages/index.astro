@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Showcase from '../components/Showcase.astro';
+import Card from '../components/Card.astro';
+
+const posts = await Astro.glob('../posts/*.md');
+
+---
+
+<Layout>
+	<Showcase showExtra={true} />
+	<section class="page-content">
+		<div class="container">
+       {posts.map((post) =>
+          <Card>
+            <post.Content />
+          </Card>
+        )}
+    </div>
+</Layout>
