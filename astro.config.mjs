@@ -1,8 +1,14 @@
 import { defineConfig } from 'astro/config';
+import tailwind from "@astrojs/tailwind";
+import image from "@astrojs/image";
 import NetlifyCMS from 'astro-netlify-cms';
 
 export default defineConfig({
   integrations: [
+    tailwind(),
+		image({
+			serviceEntryPoint: '@astrojs/image/sharp',
+		}),
     NetlifyCMS({
       config: {
         backend: {
@@ -13,7 +19,7 @@ export default defineConfig({
           {
             name: 'posts',
             label: 'Posts',
-            folder: 'src/posts',
+            folder: 'src/pages/posts',
             create: true,
             delete: true,
             fields: [

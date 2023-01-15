@@ -1,0 +1,53 @@
+---
+import { Image } from '@astrojs/image/components';
+
+import SectionTitle from '../components/common/SectionTitle.astro';
+
+const items = [
+	[
+		{
+			title: 'Medix Luzern',
+			description:
+				'Wir sind Mitglied beim Ärztenetz Luzern. Dieses steht für eine umfassende, qualitativ hochstehende und kostenbewusste Gesundheitsversorgung.',
+			img: 'src/assets/images/logo_medix.png',
+      ratio: 1685/602, 
+      url: 'https://www.medix-luzern.ch',
+		},
+		{
+			title: 'Equam',
+			description:
+				'Die Praxis wird alle 3 Jahre durch die externe Qualitätsförderung für ambulante Medizin geprüft.',
+			img: 'src/assets/images/logo_equam.svg',
+      ratio: 186/63, 
+      url: 'https://www.equam.ch',
+		},
+	],
+];
+---
+
+<section class="scroll-mt-16 bg-primary-dark">
+	<div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
+    <SectionTitle title="Partner" text="Unser Ärztenetzwerk und Zertifizierung" showText={true} />
+		<div class="grid mx-auto space-y-6 md:space-y-0">
+			{
+				items.map((subitems) => (
+					<div class="space-y-8 sm:px-8">
+						{subitems.map(({ title, description, img, url }) => (
+							<div class="flex flex-row max-w-lg">
+								<div class="mb-4 mr-16">
+			              <a class="flex items-center justify-center w-24 h-14" href={url}>
+                      <Image src={img} width={300} height={100} alt="" />
+									</a>
+								</div>
+								<div>
+									<h3 class="mb-3 text-xl font-medium">{title}</h3>
+									<p class="text-secondary-light dark:text-primary-dark">{description}</p>
+								</div>
+							</div>
+						))}
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

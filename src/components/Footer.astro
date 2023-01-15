@@ -1,51 +1,85 @@
-<footer class="footer">
-  <div class="container">
-    <div>
-      <h3>Kontakt</h3>
-      <p>041 371 14 14<br>praxis.udligenswil@hin.ch<br>Dorfstrasse 21<br>6044 Udligenswil</p>
-    </div>
-    <div>
-      <h3>Telefonzeiten</h3>
-      <p>Mo/Mi/Fr<br>8:00 - 11:45 Uhr<br>14:00 bis 17:30 Uhr<br>Di/Do<br>8:00 - 11:45</p>
-    </div>
-    <div>
-      <h3>Öffnungszeiten</h3>
-      <p><b>Dr. med. Claudia Waldleben</b><br>Mi/Fr ganztags<br>Dienstag vormittags</p>
-      <p><b>Dr. med. Eva Hess - Arnold</b><br>Montag ganztags<br>Donnerstag vormittags</p>
-      <p>Sprechstunden nach Vereinbarung</p>
-    </div>
-    <div>
-      <h3>Notfall</h3>
-      <p>Ärztlicher Notfalldienst<br>0900 11 14 14 (CHF 3.23/min)</p>
-      <p>Beratungstelefon Kinderspital Luzern<br>0900 55 47 74 (CHF 3.23/min)</p>
-    </div>
-  <div>
-    <p>&copy; 2023 Hausarztpraxis Udligenswil</p>
-  </div>
-  </div>
-</footer>
+---
 
-<style>
-  .footer {
-    background: var(--color-primary);
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
+const infosFooter = [
+	{
+		title: "Kontakt",
+		items: [  "041 371 12 70",
+			        "praxis.udligenswil@hin.ch",
+              "Dorfstrasse 21",
+              "6044 Udligenswil",
+		],
+	},
+  {
+ 		title: "Telefonzeiten", 
+    items: [ "Montag/Mittwoch/Freitag",
+             "8:00 - 11:45 Uhr",
+             "14:00 bis 17:30 Uhr"
+    ],
+    items2: [ "Dienstag/Donnerstag",
+ 	  		      "8:00 - 11:45 Uhr",
+    ],
+  },
+  {
+		title: "Öffnungszeiten",
+		items: [ "Dr. med. Claudia Waldleben",
+			       "Mittwoch/Freitag ganztag",
+    ],
+    items2: [ "Dr. med. Eva Hess - Arnold",
+              "Montag ganztags",
+		          "Donnerstag vormittags",
+    ],
+    items3: [ "Sprechstunden nach Vereinbarung",
+		], 
+  },
+  {
+		title: "Notfall",
+		items: [ "Ärztlicher Notfalldienst",
+	         	 "0900 11 14 14 (CHF 3.23/min)",
+    ],
+    items2: [ "Beratungstelefon Kinderspital Luzern",
+	         	  "0900 55 47 74 (CHF 3.23/min)",
+		],
+
   }
-  .footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer h3 {
-    margin-bottom: 10px;
-  }
-  .footer div:nth-child(1) {
-    text-align: center;
-  }
-  @media (max-width: 500px) {
-    .footer .container {
-    }
-  }
-</style>
+]
+---
+
+<footer class="bg-primary-dark dark:secondary-light">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="grid grid-cols-12 gap-4 gap-y-10 sm:gap-8 py-10 md:py-14">
+			<div class="col-span-12 lg:col-span-3">
+				<div class="mb-2">
+					<a class="text-tertiary inline-block font-bold text-2xl" href="#">Hausarztpraxis<br>Udligenswil</a>
+				</div>
+				<div class="text-base">
+					<a
+						class="text-secondary-light hover:text-tertiary dark:text-primary-dark hover:underline transition duration-150 ease-in-out"
+						href="#">Datenschutz</a
+					> 
+				</div>
+			</div>
+			{
+				infosFooter.map(({ title, items, items2 }) => (
+					<div class="text-secondary-light dark:text-primary-dark col-span-6 md:col-span-3 lg:col-span-2">
+						<div class="text-secondary-light font-medium mb-3">{title}</div>
+						{items && Array.isArray(items) && items.length > 0 && (
+							<ul class="text-base leading-[1.05rem]">
+								{items.map((text) => (<li class="mb-2">{text}</li>))}
+							</ul>
+						)}
+						{items2 && Array.isArray(items2) && items2.length > 0 && (
+							<ul class="text-base leading-[1.05rem] pt-4">
+								{items2.map((text) => (<li class="mb-2">{text}</li>))}
+							</ul>
+						)}
+					</div>
+				))
+			}
+		</div>
+		<div class="md:flex md:items-center md:justify-between py-6 md:py-8">
+			<div class="text-base r-4 text-secondary-light dark:text-primart-dark">
+        <p>&copy; 2023 Hausarztpraxis Udligenswil - Alle Rechte vorbehalten</p>
+			</div>
+		</div>
+	</div>
+</footer>
