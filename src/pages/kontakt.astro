@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ShowCase from '../components/ShowCase.astro';
+import Footer from '../components/Footer.astro';
+import SectionTitle from '../components/common/SectionTitle.astro';
+import { infos } from '../components/common/Infos.astro';
+---
+
+<Layout title="Hausarztpraxis Udligenswil">
+	<main>
+    <Header />
+    <ShowCase />
+		<div class="py-6 pt-8 lg:py-8 lg:pt-12">
+      <SectionTitle title="Kontakt" />
+			{
+				infos.map(({ title, items, items2 }) => (
+					<div class="text-secondary-light col-span-6 md:col-span-3 lg:col-span-2">
+						<div class="text-secondary-light font-medium mb-3">{title}</div>
+						{items && Array.isArray(items) && items.length > 0 && (
+							<ul class="text-base leading-[1.05rem]">
+								{items.map((text) => (<li class="mb-2">{text}</li>))}
+							</ul>
+						)}
+						{items2 && Array.isArray(items2) && items2.length > 0 && (
+							<ul class="text-base leading-[1.05rem] pt-4">
+								{items2.map((text) => (<li class="mb-2">{text}</li>))}
+							</ul>
+						)}
+					</div>
+				))
+			}
+		</div>
+    <Footer />
+	</main>
+</Layout>

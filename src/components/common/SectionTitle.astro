@@ -8,9 +8,9 @@ const { title, text, showText = false } = Astro.props as Props;
 ---
 
 <section class="mb-8 md:mx-auto sm:text-center md:mb-8 max-w-3xl">
-  <p class="text-3xl font-semibold tracking-wide uppercase">{title}</p>
+  <p class="text-2xl text-secondary-light font-semibold tracking-wide uppercase">{title}</p>
   {showText && <>
-    <h2 class="text-2xl md:text-3xl font-medium leading-tighter tracking-tighter mb-4 font-heading">
+    <h2 class="text-xl md:text-3xl font-medium leading-tighter tracking-tighter mb-4 font-heading">
       {text}
     </h2>
   </>}

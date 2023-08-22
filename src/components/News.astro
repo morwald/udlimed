@@ -11,9 +11,9 @@ const posts = await Astro.glob('../pages/posts/*.md');
 			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start my-4">
 				{
          posts.map((post) =>
-						<div class="bg-primary-dark dark:bg-secondary-light2 relative flex flex-col p-6 hover:shadow-lg transition">
+						<div class="bg-primary-dark relative flex flex-col p-6 hover:shadow-lg transition">
 							<div class="flex align-center mb-4">
-								<div class="text-2xl text-tertiary font-medium">{post.frontmatter.title}</div>
+								<div class="text-xl text-tertiary font-medium">{post.frontmatter.title}</div>
 							</div>
 							<div class="">
                 <post.Content />

@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SectionTitle from '../components/common/SectionTitle.astro';
+import SubSectionTitle from '../components/common/SubSectionTitle.astro';
+---
+
+<Layout title="Impressum">
+	<main>
+    <Header />
+    <section class="relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-16">
+        <div class="py-6 pt-8 mx-2 lg:py-8 lg:pt-12 text-justify">
+          <SectionTitle title="Impressum" />
+			</div>
+		</div>
+</section>
+    <Footer />
+	</main>
+</Layout>

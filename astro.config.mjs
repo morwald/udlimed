@@ -1,14 +1,13 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
 import NetlifyCMS from 'astro-netlify-cms';
 
 export default defineConfig({
+  experimental: {
+   assets: true
+  },
   integrations: [
     tailwind(),
-		image({
-			serviceEntryPoint: '@astrojs/image/sharp',
-		}),
     NetlifyCMS({
       config: {
         backend: {

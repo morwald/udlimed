@@ -1,62 +1,57 @@
 ---
-import { Picture } from '@astrojs/image/components';
-
 import SectionTitle from '../components/common/SectionTitle.astro';
+import room2 from '../assets/images/gallery/room2.jpg'
+import reception from '../assets/images/gallery/reception.jpg'
+import waitingroom from '../assets/images/gallery/waitingroom.jpg'
 ---
 
 <section class="relative">
 	<div class="max-w-6xl mx-auto px-4 py-16 lg:py-20 sm:px-6">
     <SectionTitle title="Gallerie" text="Ein Blick in unsere Praxis" showText={true} />
 
-	    <div class="max-w-4xl mx-auto px-4 py-16 lg:py-17 sm:px-6">
-      <div class="slide relative">
-					<Picture
-						src={import('../assets/images/gallery/room2.jpg')}
-						class="mx-auto w-full object-cover"
-						widths={[400, 768, 1480]}
-						sizes="(max-width: 767px) 400px, (max-width: 1479px) 768px, 1480px"
-						alt="Hero Image"
-						aspectRatio={16/10}
-						loading="eager"
-						width={1480}
-						height={833}
-					/>
-      </div>
+	 <!--    <div class="max-w-4xl mx-auto px-4 py-16 lg:py-17 sm:px-6"> -->
+  <!---->
+  <!--     <div class="slide relative"> -->
+  <!--         <img src={room2.src} class="mx-auto" width={room2.width} height={room2.height} alt="Behandlungsraum" /> -->
+  <!--     </div> -->
+  <!---->
+  <!--     <div class="slide relative"> -->
+  <!--         <img src={reception.src} class="mx-auto" width={reception.width} height={reception.height} alt="Behandlungsraum" /> -->
+  <!--     </div> -->
+  <!---->
+  <!--     <div class="slide relative"> -->
+  <!--         <img src={waitingroom.src} class="mx-auto" width={waitingroom.width} height={waitingroom.height} alt="Behandlungsraum" /> -->
+  <!--     </div> -->
+  <!---->
+  <!--     <a class="relative top-1/2 p-4 -translate-y-1/2 text-primary hover:text-tertiary cursor-pointer" -->
+  <!--         onclick="moveSlide(-1)">❮</a> -->
+  <!---->
+  <!--     <a class="absolute right-3 top-1/2 p-4 -translate-y-1/2 text-primary hover:text-tertiary cursor-pointer" -->
+  <!--         onclick="moveSlide(1)">❯</a> -->
+  <!-- </div> -->
 
-      <div class="slide relative">
-					<Picture
-						src={import('../assets/images/gallery/waitingroom.jpg')}
-						class="mx-auto w-full object-cover"
-						widths={[400, 768, 1480]}
-						sizes="(max-width: 767px) 400px, (max-width: 1479px) 768px, 1480px"
-						alt="Hero Image"
-						aspectRatio={16/10}
-						loading="eager"
-						width={1480}
-						height={833}
-					/>
-      </div>
+<div class="max-w-4xl mx-auto px-4 py-16 lg:py-17 sm:px-6">
+    <div class="relative flex items-center justify-center">
+        <a class="-translate-y-1/2 pr-5 text-primary hover:text-tertiary cursor-pointer"
+            onclick="moveSlide(-1)">❮</a>
+        
+        <div class="slide relative">
+            <img src={room2.src} class="mx-auto" width={room2.width} height={room2.height} alt="Behandlungsraum" />
+        </div>
 
-      <div class="slide relative">
-					<Picture
-						src={import('../assets/images/gallery/reception.jpg')}
-						class="mx-auto w-full object-cover"
-						widths={[400, 768, 1480]}
-						sizes="(max-width: 767px) 400px, (max-width: 1479px) 768px, 1480px"
-						alt="Hero Image"
-						aspectRatio={16/10}
-						loading="eager"
-						width={1480}
-						height={833}
-					/>
-      </div>
-
-      <a class="absolute left-3 top-1/2 p-4 -translate-y-1/2 text-primary hover:text-tertiary cursor-pointer"
-          onclick="moveSlide(-1)">❮</a>
-
-      <a class="absolute right-3 top-1/2 p-4 -translate-y-1/2 text-primary hover:text-tertiary cursor-pointer"
-          onclick="moveSlide(1)">❯</a>
-  </div>
+        <div class="slide relative">
+            <img src={reception.src} class="mx-auto" width={reception.width} height={reception.height} alt="Behandlungsraum" />
+        </div>
+        
+        <div class="slide relative">
+            <img src={waitingroom.src} class="mx-auto" width={waitingroom.width} height={waitingroom.height} alt="Behandlungsraum" />
+        </div>
+        
+        <a class="-translate-y-1/2 pl-5 text-primary hover:text-tertiary cursor-pointer"
+            onclick="moveSlide(1)">❯</a>
+    </div>
+    
+</div>
   <div class="flex justify-center items-center space-x-5">
       <div class="dot w-3 h-3 rounded-full cursor-pointer" onclick="currentSlide(1)"></div>
       <div class="dot w-3 h-3 rounded-full cursor-pointer" onclick="currentSlide(2)"></div>

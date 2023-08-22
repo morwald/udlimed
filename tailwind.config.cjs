@@ -7,15 +7,14 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: colors.sky["50"],
-          dark: "#EBEBEB",
+          DEFAULT: colors.sky["30"],
+          dark: colors.slate["200"],
         },
         secondary: {
           DEFAULT: colors.slate["800"],
           light: colors.slate["600"],
         },
         tertiary: {
-          // DEFAULT: colors.sky["700"],
           DEFAULT: colors.amber["700"],
         }
       },

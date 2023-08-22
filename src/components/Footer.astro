@@ -1,66 +1,30 @@
 ---
-
-const infosFooter = [
-	{
-		title: "Kontakt",
-		items: [  "041 371 12 70",
-			        "praxis.udligenswil@hin.ch",
-              "Dorfstrasse 21",
-              "6044 Udligenswil",
-		],
-	},
-  {
- 		title: "Telefonzeiten", 
-    items: [ "Montag/Mittwoch/Freitag",
-             "8:00 - 11:45 Uhr",
-             "14:00 bis 17:30 Uhr"
-    ],
-    items2: [ "Dienstag/Donnerstag",
- 	  		      "8:00 - 11:45 Uhr",
-    ],
-  },
-  {
-		title: "Öffnungszeiten",
-		items: [ "Dr. med. Claudia Waldleben",
-			       "Mittwoch/Freitag ganztag",
-    ],
-    items2: [ "Dr. med. Eva Hess - Arnold",
-              "Montag ganztags",
-		          "Donnerstag vormittags",
-    ],
-    items3: [ "Sprechstunden nach Vereinbarung",
-		], 
-  },
-  {
-		title: "Notfall",
-		items: [ "Ärztlicher Notfalldienst",
-	         	 "0900 11 14 14 (CHF 3.23/min)",
-    ],
-    items2: [ "Beratungstelefon Kinderspital Luzern",
-	         	  "0900 55 47 74 (CHF 3.23/min)",
-		],
-
-  }
-]
+import { infos } from '../components/common/Infos.astro';
 ---
 
-<footer class="bg-primary-dark dark:secondary-light">
+<footer class="bg-primary-dark">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6">
 		<div class="grid grid-cols-12 gap-4 gap-y-10 sm:gap-8 py-10 md:py-14">
 			<div class="col-span-12 lg:col-span-3">
 				<div class="mb-2">
-					<a class="text-tertiary inline-block font-bold text-2xl" href="#">Hausarztpraxis<br>Udligenswil</a>
+					<a class="text-tertiary inline-block font-bold text-2xl" href="/">Hausarztpraxis<br>Udligenswil</a>
 				</div>
 				<div class="text-base">
 					<a
-						class="text-secondary-light hover:text-tertiary dark:text-primary-dark hover:underline transition duration-150 ease-in-out"
-						href="#">Datenschutz</a
+						class="text-secondary-light hover:text-tertiary hover:underline transition duration-150 ease-in-out"
+						href="/impressum">Impressum</a
+					> 
+				</div>
+				<div class="text-base">
+					<a
+						class="text-secondary-light hover:text-tertiary hover:underline transition duration-150 ease-in-out"
+						href="/datenschutz">Datenschutz</a
 					> 
 				</div>
 			</div>
 			{
-				infosFooter.map(({ title, items, items2 }) => (
-					<div class="text-secondary-light dark:text-primary-dark col-span-6 md:col-span-3 lg:col-span-2">
+				infos.map(({ title, items, items2 }) => (
+					<div class="text-secondary-light col-span-6 md:col-span-3 lg:col-span-2">
 						<div class="text-secondary-light font-medium mb-3">{title}</div>
 						{items && Array.isArray(items) && items.length > 0 && (
 							<ul class="text-base leading-[1.05rem]">
@@ -77,8 +41,8 @@ const infosFooter = [
 			}
 		</div>
 		<div class="md:flex md:items-center md:justify-between py-6 md:py-8">
-			<div class="text-base r-4 text-secondary-light dark:text-primart-dark">
-        <p>&copy; 2023 Hausarztpraxis Udligenswil - Alle Rechte vorbehalten</p>
+			<div class="text-base r-4 text-secondary-light">
+        <p>&copy; 2023 Hausarztpraxis Udligenswil</p>
 			</div>
 		</div>
 	</div>

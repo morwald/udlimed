@@ -1,7 +1,7 @@
 ---
-import { Image } from '@astrojs/image/components';
-
 import SectionTitle from '../components/common/SectionTitle.astro';
+import logoMedix from '../assets/images/logo_medix.png'
+import logoEquam from '../assets/images/logo_equam.svg'
 
 const items = [
 	[
@@ -9,16 +9,14 @@ const items = [
 			title: 'Medix Luzern',
 			description:
 				'Wir sind Mitglied beim Ärztenetz Luzern. Dieses steht für eine umfassende, qualitativ hochstehende und kostenbewusste Gesundheitsversorgung.',
-			img: 'src/assets/images/logo_medix.png',
-      ratio: 1685/602, 
+			img: logoMedix,
       url: 'https://www.medix-luzern.ch',
 		},
 		{
 			title: 'Equam',
 			description:
 				'Die Praxis wird alle 3 Jahre durch die externe Qualitätsförderung für ambulante Medizin geprüft.',
-			img: 'src/assets/images/logo_equam.svg',
-      ratio: 186/63, 
+			img: logoEquam,
       url: 'https://www.equam.ch',
 		},
 	],
@@ -36,12 +34,12 @@ const items = [
 							<div class="flex flex-row max-w-lg">
 								<div class="mb-4 mr-16">
 			              <a class="flex items-center justify-center w-24 h-14" href={url}>
-                      <Image src={img} width={300} height={100} alt="" />
+                      <img src={img.src} width={img.width} height={img.height} alt="" />
 									</a>
 								</div>
 								<div>
 									<h3 class="mb-3 text-xl font-medium">{title}</h3>
-									<p class="text-secondary-light dark:text-primary-dark">{description}</p>
+									<p class="text-secondary-light">{description}</p>
 								</div>
 							</div>
 						))}

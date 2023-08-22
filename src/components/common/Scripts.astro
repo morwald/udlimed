@@ -1,19 +1,6 @@
 ---
 ---
-
 <script is:inline>
-	if (!localStorage.theme) {
-	  localStorage.theme = "light";
-	}
-
-	if (
-		localStorage.theme === 'dark' ||
-		(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-	) {
-		document.documentElement.classList.add('dark');
-	} else {
-		document.documentElement.classList.remove('dark');
-	}
 
 	function attachEvent(selector, event, fn) {
 		const matches = document.querySelectorAll(selector);
@@ -30,11 +17,6 @@
 			document.body.classList.toggle('overflow-hidden');
 			document.getElementById('header')?.classList.toggle('h-screen');
 			document.querySelector('#header nav')?.classList.toggle('hidden');
-		});
-
-		attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
-			document.documentElement.classList.toggle('dark');
-			localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
 		});
 	};
 
