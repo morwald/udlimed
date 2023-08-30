@@ -4,32 +4,60 @@ import Header from '../components/Header.astro';
 import ShowCase from '../components/ShowCase.astro';
 import Footer from '../components/Footer.astro';
 import SectionTitle from '../components/common/SectionTitle.astro';
-import { infos } from '../components/common/Infos.astro';
+import { infosKontakt } from '../components/common/Infos.astro';
+import { infosTelefon } from '../components/common/Infos.astro';
+import { infosZeiten } from '../components/common/Infos.astro';
 ---
 
 <Layout title="Hausarztpraxis Udligenswil">
 	<main>
     <Header />
     <ShowCase />
-		<div class="py-6 pt-8 lg:py-8 lg:pt-12">
-      <SectionTitle title="Kontakt" />
+		<div class="py-4 pt-8 px-4 sm:px-6 lg:py-3 lg:pt-8">
+    <SectionTitle title="Kontakt" />
+		<div class="flex flex-col sm:items-center sm:mx-auto sm:text-center">
+			<p class="text-secondary-light max-w-xl pb-8">
+        Zur Vereinbarung eines Termines bitten wir Sie, uns telefonisch zu kontaktieren. Die Beantwortung von E-Mails kann bis zu 48 Stunden dauern, übers Wochende auch länger.
+			</p>
+
 			{
-				infos.map(({ title, items, items2 }) => (
-					<div class="text-secondary-light col-span-6 md:col-span-3 lg:col-span-2">
-						<div class="text-secondary-light font-medium mb-3">{title}</div>
+				infosKontakt.map(({ items }) => (
+					<div class="max-w-6xl pb-6">
 						{items && Array.isArray(items) && items.length > 0 && (
-							<ul class="text-base leading-[1.05rem]">
-								{items.map((text) => (<li class="mb-2">{text}</li>))}
-							</ul>
-						)}
-						{items2 && Array.isArray(items2) && items2.length > 0 && (
-							<ul class="text-base leading-[1.05rem] pt-4">
-								{items2.map((text) => (<li class="mb-2">{text}</li>))}
-							</ul>
+							<ul>{items.map((text) => (<li >{text}</li>))}</ul>
 						)}
 					</div>
 				))
 			}
+
+			{
+				infosTelefon.map(({ title, items, items2 }) => (
+					<div class="py-6 max-w-6xl lg:py-6">
+						<div class="text-secondary-light text-xl font-medium mb-3">{title}</div>
+						{items && Array.isArray(items) && items.length > 0 && (
+							<ul>{items.map((text) => (<li >{text}</li>))}</ul>
+						)}
+						{items2 && Array.isArray(items2) && items2.length > 0 && (
+							<ul class="pt-4">{items2.map((text) => (<li>{text}</li>))}</ul>
+						)}
+					</div>
+				))
+			}
+
+			{
+				infosZeiten.map(({ title, items, items2 }) => (
+					<div class="py-6 max-w-6xl lg:py-6">
+						<div class="text-secondary-light text-xl font-medium mb-3">{title}</div>
+						{items && Array.isArray(items) && items.length > 0 && (
+							<ul>{items.map((text) => (<li >{text}</li>))}</ul>
+						)}
+						{items2 && Array.isArray(items2) && items2.length > 0 && (
+							<ul class="pt-4">{items2.map((text) => (<li>{text}</li>))}</ul>
+						)}
+					</div>
+				))
+			}
+		</div>
 		</div>
     <Footer />
 	</main>

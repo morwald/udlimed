@@ -4,15 +4,61 @@ import Header from '../components/Header.astro';
 import ShowCase from '../components/ShowCase.astro';
 import Footer from '../components/Footer.astro';
 import SectionTitle from '../components/common/SectionTitle.astro';
+
+import logoMedix from '../assets/images/logo_medix.png'
+
+const items = [
+	[
+		{
+			name: 'Dr. med. Claudia Waldleben',
+      quals: ['Praxisinhaberin seit 2014', 
+              'FMH Allgemein Innere Medizin',
+              'Sonographie Abdomen',
+              'Dosisintensives Röntgen'],
+			img: logoMedix,
+		},
+		{
+			name: 'Dr. med. Eva Hess-Arnold',
+      quals: ['FMH Allgemein Innere Medizin',
+              'Betreuung Kinder ab Geburt'],
+			img: logoMedix,
+		},
+	],
+];
 ---
 
 <Layout title="Ärztinnen">
 	<main>
     <Header />
     <ShowCase />
-		<div class="py-6 pt-8 lg:py-8 lg:pt-12">
-      <SectionTitle title="Ärztinnen" />
+		<div class="py-4 pt-8 px-4 sm:px-6 lg:py-3 lg:pt-8">
+     <SectionTitle title="Ärztinnen" />
+
+		<div class="grid sm:place-items-center mx-auto space-y-8 md:space-y-0">
+			{
+				items.map((subitems) => (
+					<div class="space-y-8 sm:px-8">
+						{subitems.map(({ name, quals, img }) => (
+							<div class="flex flex-row max-w-lg">
+								<div class="mb-4 mr-16">
+			              <a class="flex items-center justify-center w-24 h-14">
+                      <img src={img.src} width={img.width} height={img.height} alt="" />
+									</a>
+								</div>
+								<div>
+									<h3 class="mb-3 text-secondary-light text-xl font-medium">{name}</h3>
+
+						      {quals && Array.isArray(quals) && quals.length > 0 && (
+							    <ul>{quals.map((text) => (<li >{text}</li>))}</ul>
+						      )}
+								</div>
+							</div>
+						))}
+					</div>
+				))
+			}
 		</div>
-    <Footer />
+	</div>
+  <Footer />
 	</main>
 </Layout>
