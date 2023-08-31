@@ -5,7 +5,8 @@ import ShowCase from '../components/ShowCase.astro';
 import Footer from '../components/Footer.astro';
 import SectionTitle from '../components/common/SectionTitle.astro';
 
-import logoMedix from '../assets/images/logo_medix.png'
+import waldleben from '../assets/images/hess.jpg'
+import hess from '../assets/images/waldleben.jpg'
 
 const items = [
 	[
@@ -15,13 +16,13 @@ const items = [
               'FMH Allgemein Innere Medizin',
               'Sonographie Abdomen',
               'Dosisintensives Röntgen'],
-			img: logoMedix,
+			img: waldleben,
 		},
 		{
 			name: 'Dr. med. Eva Hess-Arnold',
       quals: ['FMH Allgemein Innere Medizin',
               'Betreuung Kinder ab Geburt'],
-			img: logoMedix,
+			img: hess,
 		},
 	],
 ];
@@ -31,17 +32,17 @@ const items = [
 	<main>
     <Header />
     <ShowCase />
-		<div class="py-4 pt-8 px-4 sm:px-6 lg:py-3 lg:pt-8">
+		<div class="py-10 px-4 sm:px-6 lg:py-12">
      <SectionTitle title="Ärztinnen" />
 
 		<div class="grid sm:place-items-center mx-auto space-y-8 md:space-y-0">
 			{
 				items.map((subitems) => (
-					<div class="space-y-8 sm:px-8">
+					<div class="space-y-16 sm:px-8">
 						{subitems.map(({ name, quals, img }) => (
 							<div class="flex flex-row max-w-lg">
 								<div class="mb-4 mr-16">
-			              <a class="flex items-center justify-center w-24 h-14">
+			              <a class="flex items-center justify-center w-36">
                       <img src={img.src} width={img.width} height={img.height} alt="" />
 									</a>
 								</div>
@@ -49,7 +50,7 @@ const items = [
 									<h3 class="mb-3 text-secondary-light text-xl font-medium">{name}</h3>
 
 						      {quals && Array.isArray(quals) && quals.length > 0 && (
-							    <ul>{quals.map((text) => (<li >{text}</li>))}</ul>
+							    <ul>{quals.map((text) => (<li class=" pb-3 leading-[1.2rem]" >{text}</li>))}</ul>
 						      )}
 								</div>
 							</div>
