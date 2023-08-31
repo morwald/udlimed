@@ -1,8 +1,8 @@
 ---
 title: Aktuelles
 ---
-Ab dem neuen Jahr ist die Praxis auch am Dienstagnachmittag geschlossen
+Seit 2023 Jahr ist die Praxis auch am Dienstagnachmittag geschlossen
 
-**Unsere neuen Öffnungszeitens :**  
+**Unsere neuen Öffnungszeiten:**  
 Montag / Mittwoch / Freitag ganztags  
 Dienstag / Donnerstag nur vormittags
