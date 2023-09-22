@@ -1,5 +1,5 @@
 ---
-title: Herbstferien
+title: Herbstferien 07.10. - 15.10.2023
 ---
 <!--\[if gte mso 9]><xml>
  <o:OfficeDocumentSettings>
