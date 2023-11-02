@@ -16,11 +16,12 @@ export default defineConfig({
         },
         collections: [
           {
-            name: 'posts',
-            label: 'Posts',
+            name: 'news',
+            label: 'news',
             folder: 'src/pages/posts',
             create: true,
             delete: true,
+            slug: "{{year}}-{{month}}-{{day}}_{{slug}}",
             fields: [
               { name: 'title', widget: 'string', label: 'Post Title' },
               { name: 'body', widget: 'markdown', label: 'Post Body' },
