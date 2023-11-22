@@ -3,9 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import NetlifyCMS from 'astro-netlify-cms';
 
 export default defineConfig({
-  experimental: {
-   assets: true
-  },
   integrations: [
     tailwind(),
     NetlifyCMS({
